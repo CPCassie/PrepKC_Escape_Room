@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hill's Data Escape Room Challenge</title>
+    <link rel="stylesheet" href="style_escape_room.css">
+    
+    <style>
+        .main-content-wrapper.hidden {
+            display: none;
+        }
+        #language-select-screen {
+            text-align: center;
+            padding: 50px;
+        }
+        #quiz-language {
+            padding: 10px;
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="presentation-container">
+
+        <div id="key-display">
+            <h2>🔑 Answer Key</h2>
+            <div id="key-content">
+                <p>Answers will appear here as challenges are solved.</p>
+            </div>
+        </div>
+
+        <div id="main-content-wrapper" class="main-content-wrapper hidden"> 
+
+            <div class="quiz-container">
+                
+                <header>
+                    <h1 id="header-title-text">DATA IN ACTION ESCAPE ROOM CHALLENGE</h1>
+                    <div id="timer-display" class="timer">Time: 00:00</div>
+                </header>
+
+                <div id="start-screen" class="screen hidden">
+                    </div>
+
+                <div id="quiz-screen" class="screen hidden">
+                    <h3 id="challenge-title">Challenge #1</h3>
+                    <p id="question-text"></p>
+                    <div id="question-media-container" class="media-container">
+                    </div>
+                    <div id="options-container" class="options-container">
+                    </div>
+                    <button onclick="submitAnswer()" id="submit-btn">Submit Answer</button>
+                    <p id="feedback-text" class="feedback"></p>
+                </div>
+
+                <div id="solve-screen" class="screen hidden">
+                    <h2 id="solve-title">🔑 Final Phrase Puzzle</h2>
+                    <p id="solve-instructions">Using the clues you have received, solve the phrase hidden in the pictogram to escape by matching the letter clues to the picture!</p>
+                    
+                    <div class="solve-container" id="final-solve-board">
+                        </div>
+
+                    <textarea id="final-phrase-input" rows="3" placeholder="Type the 18-letter solved phrase here (DATA SCIENCE DID THAT)!" required></textarea>
+                    <button onclick="checkFinalAnswer()" id="solve-btn">Unlock and Stop Timer</button>
+                    <p id="solve-feedback" class="feedback"></p>
+                </div>
+
+                <div id="report-screen" class="screen hidden">
+                    <h2 id="report-title">🏆 Challenge Complete!</h2>
+                    <div id="report-content">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div id="language-select-screen" class="screen">
+            <img src="Welcome.png" alt="Welcome Logo" class="welcome-image">
+            <h2>Select Your Language / Selecciona tu Idioma</h2>
+            <div style="margin: 30px 0;">
+                <label for="quiz-language" style="display: block; font-weight: bold; margin-bottom: 10px;">Language / Idioma:</label>
+                <select id="quiz-language">
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                </select>
+                <button onclick="selectLanguage()">Continue / Continuar</button>
+            </div>
+        </div>
+        </div>
+    <script src="script_escape_room.js"></script>
+</body>
+</html>
